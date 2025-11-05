@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | KalaSetu</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8ef;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f4c542;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #5a3e00;
+      font-size: 24px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: bold;
+    }
+
+    .contact-section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    .contact-section h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      background-color: #f4c542;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      color: #5a3e00;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e0b937;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .map {
+      margin-top: 20px;
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f4c542;
+      color: #5a3e00;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🪔 KalaSetu</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Write your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Our Office</h3>
+      <p><strong>Address:</strong> SYCET Innovation Cell, chha.Sambhajinagar, Maharashtra, India</p>
+      <p><strong>Email:</strong> support@kalasetu.in</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+    </div>
+
+    <div class="map">
+      <!-- Google Map Embed Placeholder -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.027467943001!2d77.21972077453228!3d28.627932584733894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2a9b09a86ff%3A0x1e4183c3cefb5d53!2sAll%20India%20Council%20for%20Technical%20Education%20(AICTE)!5e0!3m2!1sen!2sin!4v1730818233829!5m2!1sen!2sin"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </section>
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>🪔 KalaSetu</h3>
+      <p>Connecting India’s heritage to the modern world. Explore authentic crafts, textiles, and traditions from every corner of India.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:info@kalasetu.in">info@kalasetu.in</a></p>
+      <p>Phone: +91 98765 43210</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 KalaSetu | Designed with ❤️ to celebrate Indian Culture</p>
+  </div>
+</footer>
+
+  <script>
+    // Basic validation and form submission
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (name && email && message) {
+        alert("Thank you, " + name + "! Your message has been sent successfully.");
+        document.getElementById("contactForm").reset();
+      } else {
+        alert("Please fill out all fields before submitting.");
+      }
+    });
+  </script>
+  <footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>🪔 KalaSetu</h3>
+      <p>Connecting India’s heritage to the modern world. Explore authentic crafts, textiles, and traditions from every corner of India.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:info@kalasetu.in">info@kalasetu.in</a></p>
+      <p>Phone: +91 98765 43210</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 KalaSetu | Designed with ❤️ to celebrate Indian Culture</p>
+  </div>
+</footer>
+
+</body>
+</html>

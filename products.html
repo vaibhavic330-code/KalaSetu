@@ -1,45 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>KalaSetu | Products</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KalaSetu | Explore Heritage Products</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8ef;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f4c542;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      color: #5a3e00;
+      font-size: 26px;
+      margin: 5px 0;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .products-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    select, input[type="text"] {
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #fff7dd;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #fff7dd;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h4 {
+      color: #333;
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .product-card p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .product-card span {
+      color: #000;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .add-cart {
+      background-color: #f4c542;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .add-cart:hover {
+      background-color: #e3b72d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f4c542;
+      color: #5a3e00;
+      margin-top: 40px;
+    }
+
+    /* Cart Sidebar */
+    .cart {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 320px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: right 0.3s;
+      overflow-y: auto;
+      z-index: 10;
+    }
+
+    .cart.active {
+      right: 0;
+    }
+
+    .cart h3 {
+      text-align: center;
+      color: #5a3e00;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-right: 10px;
+    }
+
+    .cart-item p {
+      flex: 1;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .cart-item span {
+      font-weight: bold;
+    }
+
+    .remove {
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+
+    .total {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .checkout-btn {
+      display: block;
+      margin: 15px auto;
+      padding: 10px 20px;
+      background-color: #5a3e00;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav a {
+        margin: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="logo">🪔 KalaSetu</h1>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="cart.html">Cart 🛒 (<span id="cart-count">0</span>)</a>
-      </nav>
-    </div>
+  <header>
+    <h1>🪔 KalaSetu</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="#" id="cartButton">🛒 Cart (<span id="cartCount">0</span>)</a>
+      <a href="about.html">About</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2 class="page-title">Our Handcrafted Collection</h2>
+  <section class="products-section">
+    <h2 style="text-align:center; color:#5a3e00;">Explore Cultural Products</h2>
 
     <div class="filters">
-      <input id="search" type="search" placeholder="Search products...">
-      <select id="region-filter">
-        <option value="">All Regions</option>
-        <option>Rajasthan</option>
-        <option>Bihar</option>
-        <option>Gujarat</option>
-        <option>Maharashtra</option>
+      <select id="stateSelect">
+        <option value="">-- Select State --</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="gujarat">Gujarat</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="rajasthan">Rajasthan</option>
+        <option value="assam">Assam</option>
       </select>
+      <input type="text" id="searchBox" placeholder="Search Product..." />
     </div>
 
-    <div id="product-list" class="product-grid"></div>
-  </main>
+    <div class="product-grid" id="productList"></div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year2"></span> KalaSetu</p>
+  <div class="cart" id="cart">
+    <h3>Your Cart</h3>
+    <div id="cartItems"></div>
+    <div class="total">Total: ₹<span id="totalPrice">0</span></div>
+    <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+  </div>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>🪔 KalaSetu</h3>
+      <p>Connecting India’s heritage to the modern world. Explore authentic crafts, textiles, and traditions from every corner of India.</p>
     </div>
-  </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/products.js"></script>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:info@kalasetu.in">info@kalasetu.in</a></p>
+      <p>Phone: +91 98765 43210</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 KalaSetu | Designed with ❤️ to celebrate Indian Culture</p>
+  </div>
+</footer>
+
+  <script>
+    const productsByState = {
+      maharashtra: [
+        { name: "Warli Art Painting", price: 1200, image: "assets/warli.jpg", desc: "Tribal Warli art from Maharashtra." },
+        { name: "Paithani Saree", price: 5000, image: "assets/paithani.jpg", desc: "Rich silk saree with zari work." }
+      ],
+      gujarat: [
+        { name: "Bandhani Dupatta", price: 900, image: "assets/bandhani.jpg", desc: "Traditional tie-dye fabric from Gujarat." },
+        { name: "Patola Saree", price: 6000, image: "assets/patola.jpg", desc: "Intricately woven Patola silk saree." }
+      ],
+      tamilnadu: [
+        { name: "Tanjore Painting", price: 2500, image: "assets/tanjore.jpg", desc: "Classical South Indian gold foil painting." },
+        { name: "Kanchipuram Silk Saree", price: 7000, image: "assets/kanchipuram.jpg", desc: "Handwoven Kanchipuram silk saree." }
+      ],
+      rajasthan: [
+        { name: "Blue Pottery Vase", price: 800, image: "assets/bluepottery.jpg", desc: "Famous Jaipur blue pottery vase." },
+        { name: "Block Printed Bedsheet", price: 1200, image: "assets/blockprint.jpg", desc: "Hand block printed bedsheet." }
+      ],
+      assam: [
+        { name: "Bamboo Basket", price: 350, image: "assets/basket.jpg", desc: "Eco-friendly bamboo basket." },
+        { name: "Assam Silk Scarf", price: 1500, image: "assets/assam_silk.jpg", desc: "Luxurious Muga silk scarf." }
+      ]
+    };
+
+    let cart = [];
+    let currentState = "";
+
+    const productList = document.getElementById("productList");
+    const stateSelect = document.getElementById("stateSelect");
+    const searchBox = document.getElementById("searchBox");
+    const cartDiv = document.getElementById("cart");
+    const cartCount = document.getElementById("cartCount");
+    const cartItemsDiv = document.getElementById("cartItems");
+    const totalPriceEl = document.getElementById("totalPrice");
+    const cartButton = document.getElementById("cartButton");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    // Event listeners
+    stateSelect.addEventListener("change", renderProducts);
+    searchBox.addEventListener("keyup", renderProducts);
+    cartButton.addEventListener("click", () => cartDiv.classList.toggle("active"));
+    checkoutBtn.addEventListener("click", checkout);
+
+    function renderProducts() {
+      currentState = stateSelect.value;
+      const searchQuery = searchBox.value.toLowerCase();
+      productList.innerHTML = "";
+
+      if (!currentState || !productsByState[currentState]) {
+        productList.innerHTML = "<p style='text-align:center;'>Select a state to view products.</p>";
+        return;
+      }
+
+      const products = productsByState[currentState].filter(p => 
+        p.name.toLowerCase().includes(searchQuery)
+      );
+
+      if (products.length === 0) {
+        productList.innerHTML = "<p style='text-align:center;'>No products found.</p>";
+        return;
+      }
+
+      products.forEach((p) => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+        card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}">
+          <h4>${p.name}</h4>
+          <p>${p.desc}</p>
+          <span>₹${p.price}</span>
+          <button class="add-cart">Add to Cart</button>
+        `;
+        const btn = card.querySelector(".add-cart");
+        btn.addEventListener("click", () => addToCart(p));
+        productList.appendChild(card);
+      });
+    }
+
+    function addToCart(product) {
+      cart.push(product);
+      updateCart();
+    }
+
+    function updateCart() {
+      cartItemsDiv.innerHTML = "";
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price;
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+        div.innerHTML = `
+          <img src="${item.image}" alt="">
+          <p>${item.name} <br><span>₹${item.price}</span></p>
+          <span class="remove" data-index="${index}">x</span>
+        `;
+        cartItemsDiv.appendChild(div);
+      });
+
+      totalPriceEl.textContent = total;
+      cartCount.textContent = cart.length;
+
+      document.querySelectorAll(".remove").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const index = e.target.dataset.index;
+          cart.splice(index, 1);
+          updateCart();
+        });
+      });
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+      }
+      alert("Thank you for shopping with KalaSetu!");
+      cart = [];
+      updateCart();
+      cartDiv.classList.remove("active");
+    }
+  </script>
 </body>
 </html>

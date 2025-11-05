@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -11,8 +11,9 @@
       <h1 class="logo">🪔 KalaSetu</h1>
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        
         <a href="products.html">Shop</a>
+        <a href="about.html">About</a>
         <a href="cart.html">Cart 🛒 (<span id="cart-count">0</span>)</a>
       </nav>
     </div>
@@ -42,4 +43,221 @@
 
   <script src="js/main.js"></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KalaSetu | Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8ef;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #f4c542;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: #5a3e00;
+      font-size: 24px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2d2d2d;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('assets/heritage-bg.jpg') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .hero-content a {
+      background-color: #f4c542;
+      color: #5a3e00;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .hero-content a:hover {
+      background-color: #e0b937;
+    }
+
+    .section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .section h3 {
+      color: #5a3e00;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background-color: #fff7dd;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h4 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f4c542;
+      color: #5a3e00;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🪔 KalaSetu</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to KalaSetu</h2>
+      <p>Celebrating Indian Heritage through Digital Innovation — 
+      bringing traditional art, craft, and culture closer to you.</p>
+      <a href="products.html">🛍️ Explore Products</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Why Choose KalaSetu?</h3>
+    <div class="features">
+      <div class="feature-card">
+        <h4>🎨 Authentic Craftsmanship</h4>
+        <p>Discover hand-made traditional products crafted by Indian artisans from every corner of the country.</p>
+      </div>
+      <div class="feature-card">
+        <h4>🌍 Empowering Artisans</h4>
+        <p>Our platform connects local artisans to global markets, supporting a self-reliant Bharat.</p>
+      </div>
+      <div class="feature-card">
+        <h4>💻 Easy & Modern Experience</h4>
+        <p>Shop traditional crafts through a modern and user-friendly online interface.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Our Vision</h3>
+    <p style="max-width:700px; margin:auto; color:#444; line-height:1.7;">
+      KalaSetu aims to preserve and promote India’s heritage by building a digital bridge between artisans and customers. 
+      Our goal is to create a platform that not only sells crafts but tells the story of Indian tradition, one product at a time.
+    </p>
+  </section>
+
+
+   <footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>🪔 KalaSetu</h3>
+      <p>Connecting India’s heritage to the modern world. Explore authentic crafts, textiles, and traditions from every corner of India.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: <a href="mailto:info@kalasetu.in">info@kalasetu.in</a></p>
+      <p>Phone: +91 98765 43210</p>
+      <div class="social-icons">
+        <a href="#"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="assets/icons/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 KalaSetu | Designed with ❤️ to celebrate Indian Culture</p>
+  </div>
+</footer>
+</body>
 </html>
+
